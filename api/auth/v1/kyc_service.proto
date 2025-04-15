@@ -1,0 +1,41 @@
+
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "api/auth/v1/kyc.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+service KYCService {
+    rpc CreateKYC(CreateKYCRequest) returns (CreateKYCResponse) {
+        option (google.api.http) = {
+            post : "/api/v1/kyc"
+            body: "*"
+        };
+    }
+
+    rpc GetKYCByPhone(GetKYCByPhoneRequest) returns (GetKYCByPhoneResponse) {
+        option (google.api.http) = {
+            get : "/api/v1/kyc/{phone_number}"
+        };
+
+        option (google.api.method_signature) = "phone_number";
+    }
+
+    rpc GetKYCByID(GetKYCByIDRequest) returns (GetKYCByIDResponse) {
+        option (google.api.http) = {
+          get : "/api/v1/kyc/{id}"
+        };
+        option (google.api.method_signature) = "id";
+    }
+
+    rpc GetKYCByAccountID(GetKYCByAccountIDRequest) returns (GetKYCByAccountIDResponse) {
+        option (google.api.http) = {
+          get : "/api/v1/kyc_by_account/{account_id}"
+        };
+        option (google.api.method_signature) = "account_id";
+    }
+}

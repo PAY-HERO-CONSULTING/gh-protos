@@ -1,0 +1,59 @@
+
+syntax = "proto3";
+
+package gh.protos.v1;
+
+option go_package = "pb/api/auth/v1";
+
+import "google/protobuf/timestamp.proto";
+import "api/common/v1/phone_number.proto";
+import "api/auth/v1/user.proto";
+import "api/auth/v1/token_info.proto";
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+}
+
+message LoginResponse {
+  bool success = 1;
+  string session_token = 2;
+}
+
+message LogoutRequest { string session_id = 1; }
+
+message LogoutResponse { bool success = 1; }
+
+message VerifyTokenRequest {
+  string access_token = 1;
+}
+
+message RequestOTPRequest {}
+
+message RequestOTPResponse {
+  bool success = 1;
+  string session_id = 2;
+}
+
+message VerifyOTPRequest {
+  string otp = 1;
+}
+
+message VerifyOTPResponse {
+  bool success = 1;
+  string access_token = 2;
+}
+
+message UnblockSessionRequest {
+  string ip_address = 1;
+  string session_id = 2;
+  string user_id = 3;
+}
+
+
+message UnblockSessionResponse {
+  bool success = 1;
+}
+
+message VerifyTokenResponse { TokenInfo token_info = 1; }

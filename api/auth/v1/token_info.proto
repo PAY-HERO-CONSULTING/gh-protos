@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "pb/api/auth/v1";
+
+message TokenInfo {
+  google.protobuf.Timestamp exp = 2;
+  bool is_admin = 3;
+  google.protobuf.Timestamp refresh = 5;
+  string status = 6;
+  string user_id = 7;
+  bool is_worker = 8;
+  string session_id = 9;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "api/common/v1/phone_number.proto";
+
+option go_package = "pb/api/auth/v1";
+
+message InviteUserToAccountRequest {
+  string account_id = 1;
+  string email = 2;
+  string organization_id = 4;
+  string phone_number = 5;
+  string base_url = 6;
+  repeated string assigned_account_ids = 7;
+
+}
+
+message InviteUserToAccountResponse { bool success = 1; }

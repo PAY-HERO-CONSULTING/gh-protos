@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "api/auth/v1/organization.proto";
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+option go_package = "pb/api/auth/v1";
+
+service OrganizationService {
+  rpc OrganizationByID(OrganizationByIDRequest) returns (OrganizationByIDResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/organizations/{id}"
+    };
+    option (google.api.method_signature) = "id";
+  }
+
+  rpc OrganizationByOwner(OrganizationByOwnerRequest) returns (OrganizationByOwnerResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/organizations/{user_id}/owner"
+    };
+    option (google.api.method_signature) = "user_id";
+  }
+
+  rpc OrganizationsForUser(OrganizationsForUserRequest) returns (OrganizationsForUserResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/users/{user_id}/organizations"
+    };
+    option (google.api.method_signature) = "user_id";
+  }
+}

@@ -1,0 +1,135 @@
+
+syntax = "proto3";
+
+package gh.protos.v1;
+
+option go_package = "pb/api/auth/v1";
+
+import "google/protobuf/timestamp.proto";
+import "api/common/v1/phone_number.proto";
+import "api/auth/v1/auth_status.proto";
+
+message User {
+  string id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+  gh.common.v1.PhoneNumber phone_number = 5;
+  string username = 6;
+  AuthStatus status = 7;
+  bool is_admin = 8;
+  string bio = 9;
+  string filename = 10;
+  google.protobuf.Timestamp date_of_birth = 11;
+  bool pin_set = 12;
+  bool email_verified = 13;
+  bool phone_verified = 14;
+  float email_activation_attempts = 15;
+  float phone_activation_attempts = 16;
+  string organization_id = 17;
+  google.protobuf.Timestamp created_at = 18;
+  google.protobuf.Timestamp updated_at = 19;
+}
+
+message ChangePasswordRequest {
+  string user_id = 1;
+  string old_password = 2;
+  string password = 3;
+  string password_confirmation = 4;
+}
+
+message ChangePasswordResponse { User user = 1; }
+
+message UpdateUserRequest {
+  string user_id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string dial_code = 4;
+  string number = 5;
+  string email = 6;
+  string filename = 7;
+  string bio = 8;
+  google.protobuf.Timestamp date_of_birth = 9;
+  string preferred_two_fa_method = 10;
+}
+
+message UpdateUserResponse { User user = 1; }
+message UserByIDRequest { string user_id = 1; }
+message UserByIDResponse { User user = 1; }
+
+message UserByUsernameRequest { string username = 1; }
+
+message RegisterUserRequest {
+  string first_name = 1;
+  string last_name = 2;
+  string username = 3;
+  string email = 4;
+  string dial_code = 5;
+  string number = 6;
+  string password = 7;
+  string password_confirmation = 8;
+}
+
+message RegisterUserResponse { User user = 1; }
+
+message SendEmailCodeRequest { 
+  string user_id = 1; 
+  string base_url = 2;
+}
+message SendEmailCodeResponse { User user = 1; }
+message SendPhoneCodeRequest { string user_id = 1; }
+message SendPhoneCodeResponse { User user = 1; }
+
+message ActivateUserEmailRequest {
+  string user_id = 1;
+  string code = 2;
+}
+
+message ActivateUserEmailResponse {
+  bool sucess = 1;
+  string access_token = 2;
+}
+
+message ActivateUserPhoneRequest {
+  string user_id = 1;
+  string code = 2;
+}
+
+message ActivateUserPhoneResponse { 
+  bool sucess = 1;
+  string access_token = 2;
+}
+
+message DeleteUserRequest {
+  string username = 1;
+}
+
+message DeleteUserResponse {
+  User user = 1;
+}
+
+message AccountUsersRequest {
+  string account_id = 1;
+}
+
+message AccountUsersResponse {
+  repeated User users = 1;
+}
+
+message ApproversForAccountRequest {
+  string account_id = 1;
+}
+
+message ApproversForAccountResponse {
+  repeated User users = 1;
+}
+
+message ValidateApproverRequest {
+  string user_id = 1;
+  string username = 2;
+  string account_id = 3;
+}
+
+message ValidateApproverResponse {
+  bool success = 1;
+}

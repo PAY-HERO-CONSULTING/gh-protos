@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package gh.common.v1;
+
+option go_package = "pb/api/common/v1";
+
+message ImageInfo {
+    int64 resource_id = 1;
+    string image_type = 2;
+  }
+
+message UploadImageRequest {
+    oneof data {
+        ImageInfo info = 1;
+        bytes chunk_data = 2;
+    }
+}
+
+message UploadImageResponse {
+    int64 id = 1;
+    uint32 size = 2;
+    string url = 3;
+}

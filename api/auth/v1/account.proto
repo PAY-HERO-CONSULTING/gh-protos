@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "google/protobuf/timestamp.proto";
+import "api/auth/v1/auth_status.proto";
+import "api/common/v1/pagination.proto";
+
+option go_package = "pb/api/auth/v1";
+
+message CreateAccountRequest {
+  string organization_id = 1;
+  string name = 2;
+  string description = 3;
+  string currency = 4;
+  string number = 5;
+  string dial_code = 6;
+  string email = 7;
+  bool is_verified = 8;
+  string user_id = 9;
+  bool is_signup = 10;
+  string username = 11;
+  bool admin_user = 12;
+}
+
+message Account {
+  string account_number = 1;
+  string organization_id = 2;
+  string name = 3;
+  string description = 4;
+  string currency = 5;
+  string dial_code = 6;
+  string number = 7;
+  string email = 8;
+  AuthStatus status = 9;
+  string country_code = 10;
+  bool is_verified = 11;
+  double balance = 12;
+  string creator_id = 13;
+  string api_key = 14;
+  double hourly_rate = 15;
+  bool is_card_approved = 16;
+  string web3_private_key = 17;
+  string uuid = 18;
+  bool is_registration = 19;
+  google.protobuf.Timestamp created_at = 20;
+  string id = 21;
+  google.protobuf.Timestamp updated_at = 22;
+}
+
+message CreateAccountResponse { Account account = 1; }
+
+message AccountByIDRequest {
+  string account_id = 1;
+  string uuid = 2;
+}
+
+message AccountByIDResponse { Account account = 1; }
+
+message AccountByUUIDRequest {
+  string account_id = 1;
+  string uuid = 2;
+}
+
+message AccountByUUIDResponse { Account account = 1; }
+
+message AccountsForOrganizationRequest {
+  string organization_id = 1;
+  int64 page = 2;
+  int64 per = 3;
+  string term = 4;
+}
+
+message AccountsForOrganizationResponse {
+  repeated Account accounts = 1;
+  gh.common.v1.Pagination pagination = 2;
+}
+
+message AccountsForUserRequest {
+  string organization_id = 1;
+  int64 page = 2;
+  int64 per = 3;
+  string term = 4;
+  string user_id = 5;
+}
+
+message AccountsForUserResponse {
+  repeated Account accounts = 1;
+  gh.common.v1.Pagination pagination = 2;
+}
+
+message AccountByPhoneNumberRequest {
+  string phone_number = 1;
+}
+
+message AccountByPhoneNumberResponse {
+  Account account = 1;
+}

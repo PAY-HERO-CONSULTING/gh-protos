@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "api/auth/v1/user.proto";
+
+option go_package = "pb/api/auth/v1";
+
+service UserService {
+  //  AccountUsers getting account for users
+  rpc  AccountUsers(AccountUsersRequest) returns (AccountUsersResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/accounts/{account_id}/users"
+    };
+    option (google.api.method_signature) = "account_id";
+  }
+  // ActivateUserEmail used to activate emails
+  rpc ActivateUserEmail(ActivateUserEmailRequest)
+      returns (ActivateUserEmailResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/email_activations"
+      body : "*"
+    };
+  }
+  // ActivateUserPhone used to activte phone numbers
+  rpc ActivateUserPhone(ActivateUserPhoneRequest)
+      returns (ActivateUserPhoneResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/phone_activations"
+      body : "*"
+    };
+  }
+  // ChangePassword used to changed a logged in users password
+  rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/users/{user_id}/change_password"
+      body : "*"
+    };
+  }
+  //   RegisterUser used for creating new users
+  rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/users"
+      body : "*"
+    };
+  }
+  //  SendEmailCode used to send emails activation codes
+  rpc SendEmailCode(SendEmailCodeRequest) returns (SendEmailCodeResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/email_confirmations"
+      body : "*"
+    };
+  }
+  // SendPhoneCode used to send phone activation codes
+  rpc SendPhoneCode(SendPhoneCodeRequest) returns (SendPhoneCodeResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/phone_confirmations"
+      body : "*"
+    };
+  }
+  //   UpdateUser used to update a users profile details
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse) {
+    option (google.api.http) = {
+      put : "/api/v1/users"
+      body : "*"
+    };
+  }
+  // UserByID getting a user by id
+  rpc UserByID(UserByIDRequest) returns (UserByIDResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/users/{user_id}"
+    };
+    option (google.api.method_signature) = "user_id";
+  }
+
+    // UserByID getting a user by id
+  rpc UserByUsername(UserByIDRequest) returns (UserByIDResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/users/{user_id}"
+    };
+    option (google.api.method_signature) = "user_id";
+  }
+
+  // DeleteUser 
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse) {
+    option (google.api.http) = {
+      delete : "/api/users/{username}"
+    };
+    option (google.api.method_signature) = "username";
+  }
+  // DeleteUser 
+  rpc ApproversForAccount(ApproversForAccountRequest) returns (ApproversForAccountResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/accounts/{account_id}/approvers"
+    };
+    option (google.api.method_signature) = "account_id";
+  }
+
+  rpc ValidateApprover(ApproversForAccountRequest) returns (ValidateApproverResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/approvers/validate"
+      body : "*"
+    };
+  }
+}

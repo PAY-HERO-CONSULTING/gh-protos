@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "pb/api/auth/v1";
+
+message Organization {
+
+  enum OrganizationType {
+    UNKNOWN = 0;
+    individual = 1;
+    business = 2;
+  }
+
+  enum OrganizationStatus {
+    UNSPECIFIED = 0;
+    active = 1;
+    inactive = 2;
+    banned = 3;
+  }
+
+  string id = 1;
+  string name = 2;
+  OrganizationType organization_type = 3;
+  string email = 4;
+  string admin_id = 5;
+  string creator_id = 6;
+  OrganizationStatus status = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+  string currency = 10;
+}
+
+message OrganizationByIDRequest { string id = 1; }
+message OrganizationByIDResponse { Organization organization = 1; }
+
+message OrganizationByOwnerRequest { string user_id = 1; }
+message OrganizationByOwnerResponse { Organization organization = 1; }
+
+message OrganizationsForUserRequest { string user_id = 1; }
+
+message OrganizationsForUserResponse {
+  repeated Organization organization = 1;
+}

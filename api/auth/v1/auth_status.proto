@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+option go_package = "pb/api/auth/v1";
+
+enum AuthStatus {
+  UNKNOWN = 0;
+  inactive = 1;
+  verified = 2;
+  pending = 3;
+  banned = 4;
+  active = 5;
+}

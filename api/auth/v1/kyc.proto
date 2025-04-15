@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message KYCSubmission {
+  string id = 1;  // UUID string
+  string user_type = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string national_id = 5;
+  google.protobuf.Timestamp date_of_birth = 6;
+  google.protobuf.StringValue business_description = 7;
+  google.protobuf.StringValue tax_document_number = 8;
+  string document_type = 9;
+  google.protobuf.StringValue director_names = 10;
+  string phone_number = 11;
+  string email = 12;
+  string id_front = 13;
+  string id_back = 14;
+  string proof_of_address = 15;
+  google.protobuf.StringValue business_reg_cert = 16;
+  google.protobuf.StringValue cr12 = 17;
+  google.protobuf.StringValue tax_document = 18;
+  KYCStatus status = 19;
+  google.protobuf.StringValue notes = 20;
+  string account_id = 21;
+  google.protobuf.Timestamp created_at = 22;
+  google.protobuf.Timestamp updated_at = 23;
+  string country = 24;
+  string address = 25;
+}
+
+enum KYCStatus {
+  KYC_STATUS_UNSPECIFIED = 0;
+  KYC_STATUS_PENDING = 1;
+  KYC_STATUS_ACCEPTED = 2;
+  KYC_STATUS_REJECTED = 3;
+}
+
+message CreateKYCRequest {
+  KYCSubmission submission = 1;
+}
+
+message CreateKYCResponse{
+    KYCSubmission submission = 1;
+  }
+  
+
+message GetKYCByPhoneRequest {
+  string phone_number = 1;
+}
+
+message GetKYCByPhoneResponse {
+    KYCSubmission submission = 1;
+}
+
+message GetKYCByIDRequest {
+  string id = 1;
+}
+
+message GetKYCByAccountIDRequest {
+  string account_id = 1;
+}
+
+message GetKYCByAccountIDResponse {
+    KYCSubmission submission = 1;
+}
+
+message GetKYCByIDResponse {
+    KYCSubmission submission = 1;
+}

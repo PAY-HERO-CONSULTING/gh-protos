@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "api/auth/v1/api_key.proto";
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+option go_package = "pb/api/auth/v1";
+
+service APIKeyService {
+    rpc APIKeyByUsername(APIKeyByUsernameRequest) returns (APIKeyByUsernameResponse) {
+      option (google.api.http) = {
+        get : "/api/v1/api_keys/{username}"
+      };
+      option (google.api.method_signature) = "username";
+    }
+  
+    rpc CreateAPIKey(CreateAPIKeyRequest) returns (CreateAPIKeyResponse) {
+      option (google.api.http) = {
+        post : "/api/v1/api_keys"
+        body: "*"
+      };
+    }
+
+    rpc ValidateAPIKey(ValidateAPIKeyRequest) returns (ValidateAPIKeyResponse) {
+        option (google.api.http) = {
+            post: "/api/v1/api_keys/validate"
+            body: "*"
+        };
+    }
+}  

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "api/auth/v1/account_invite.proto";
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+option go_package = "pb/api/auth/v1";
+
+service AccountInviteService {
+  // InviteUserToAccount method used for inviting users to an organization
+  rpc InviteUserToAccount(InviteUserToAccountRequest)
+      returns (InviteUserToAccountResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/account_invites"
+      body : "*"
+    };
+  }
+}

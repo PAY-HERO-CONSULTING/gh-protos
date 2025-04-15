@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "api/auth/v1/account.proto";
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+option go_package = "pb/api/auth/v1";
+
+service AccountService {
+  // AccountByID fetches an account by id
+  rpc AccountByID(AccountByIDRequest) returns (AccountByIDResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/account/{account_id}"
+    };
+    option (google.api.method_signature) = "account_id";
+  }
+    // AccountByPhoneNumber account by a given phone number
+    rpc AccountByPhoneNumber(AccountByPhoneNumberRequest) returns (AccountByPhoneNumberResponse) {
+      option (google.api.http) = {
+        get : "/api/v1/account_by_phone_number/{phone_number}"
+      };
+      option (google.api.method_signature) = "phone_number";
+    }
+  // AccountByUUID gets an account profile
+  rpc AccountByUUID(AccountByUUIDRequest) returns (AccountByUUIDResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/account/{uuid}/profile"
+    };
+    option (google.api.method_signature) = "uuid";
+  }
+  // AccountsForOrganization get organizations for an organization
+  rpc AccountsForOrganization(AccountsForOrganizationRequest)
+      returns (AccountsForOrganizationResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/organizations/{organization_id}/accounts"
+    };
+  }
+  // AccountsForUser returns accounts that a user belongs to
+  rpc AccountsForUser(AccountsForUserRequest)
+      returns (AccountsForUserResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/user/{user_id}/accounts"
+    };
+  }
+  // CreateAccount create a new account for an organization
+  rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/accounts"
+      body : "*"
+    };
+  }
+}

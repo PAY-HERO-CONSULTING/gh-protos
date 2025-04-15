@@ -1,0 +1,46 @@
+
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+
+message CreateAPIKeyRequest {
+    string account_id = 1;
+    string name = 2;
+}
+
+message ValidateAPIKeyRequest {
+    string api_key = 1;
+    string api_secret = 2;
+}
+
+message APIKey {
+    string id = 1;
+    string account_id = 2;
+    string name = 3;
+    string username = 4;
+    string user_id = 5;
+    string api_secret = 6;
+    string password = 7;
+}
+
+message APIKeyByUsernameRequest {
+    string username = 1;
+}
+
+message APIKeyByUsernameResponse {
+    APIKey api_key = 1;
+}
+
+
+message CreateAPIKeyResponse {
+    APIKey api_key = 1;
+}
+
+
+message ValidateAPIKeyResponse {
+    APIKey api_key = 1;
+}

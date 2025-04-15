@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package gh.protos.v1;
+
+import "api/auth/v1/session.proto";
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+
+option go_package = "pb/api/auth/v1";
+
+service SessionService {
+  // Login used for creating new sessions for users
+  rpc Login(LoginRequest) returns (LoginResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/login"
+      body : "*"
+    };
+  }
+  // Logout used for deleting user sessions
+  rpc Logout(LogoutRequest) returns (LogoutResponse) {
+    option (google.api.http) = {
+      delete : "/api/v1/logout"
+    };
+  }
+  // VerifyToken used for verifying a token
+  rpc VerifyToken(VerifyTokenRequest) returns (VerifyTokenResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/verify_token"
+    };
+  }
+
+  // RequestOTP used for requesting for otps 
+  rpc RequestOTP(RequestOTPRequest) returns (RequestOTPResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/request_otp"
+    };
+  }
+
+  // VerifyOTP used for verifying otps sent to clients
+  rpc VerifyOTP(VerifyOTPRequest) returns (VerifyOTPResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/verify_otp"
+      body : "*"
+    };
+  }
+
+  // UnblockSession used for unblocking session caches
+  rpc UnblockSession(UnblockSessionRequest) returns (UnblockSessionResponse) {
+    option (google.api.http) = {
+      post : "/api/v1/biblopass"
+      body : "*"
+    };
+  }
+}
