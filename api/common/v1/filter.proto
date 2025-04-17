@@ -4,6 +4,7 @@ package gh.common.v1;
 
 option go_package = "pb/api/common/v1";
 
+
 message FilterQuery {
   string account_id = 1;
   string organization_id = 2;
