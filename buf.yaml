@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/PAY-HERO-CONSULTING/gh-protos/pb
+name: buf.build/PAY-HERO-CONSULTING/gh-protos
 breaking:
   use:
     - FILE
