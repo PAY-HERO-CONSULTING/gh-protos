@@ -1,0 +1,22 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb
+    except:
+      - buf.build/googleapis/googleapis
+plugins:
+  - plugin: go
+    out: pb
+    opt:
+      - paths=source_relative
+  - plugin: go-grpc
+    out: pb
+    opt:
+      - paths=source_relative
+  - plugin: grpc-gateway
+    out: pb
+    opt:
+      - paths=source_relative
+  - plugin: buf.build/grpc-ecosystem/openapiv2:v2.15.2
+    out: third_party/OpenAPI
