@@ -233,9 +233,9 @@ const file_api_common_v1_image_proto_rawDesc = "" +
 	"\x13UploadImageResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
 	"\x04size\x18\x02 \x01(\rR\x04size\x12\x10\n" +
-	"\x03url\x18\x03 \x01(\tR\x03urlB\xbf\x01\n" +
+	"\x03url\x18\x03 \x01(\tR\x03urlB\xb4\x01\n" +
 	"\x10com.gh.common.v1B\n" +
-	"ImageProtoP\x01ZMgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
+	"ImageProtoP\x01ZBgithub.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
 
 var (
 	file_api_common_v1_image_proto_rawDescOnce sync.Once

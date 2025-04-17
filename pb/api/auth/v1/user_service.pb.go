@@ -43,8 +43,8 @@ const file_api_auth_v1_user_service_proto_rawDesc = "" +
 	"DeleteUser\x12\x1f.gh.protos.v1.DeleteUserRequest\x1a .gh.protos.v1.DeleteUserResponse\"(\xdaA\busername\x82\xd3\xe4\x93\x02\x17*\x15/api/users/{username}\x12\xa8\x01\n" +
 	"\x13ApproversForAccount\x12(.gh.protos.v1.ApproversForAccountRequest\x1a).gh.protos.v1.ApproversForAccountResponse\"<\xdaA\n" +
 	"account_id\x82\xd3\xe4\x93\x02)\x12'/api/v1/accounts/{account_id}/approvers\x12\x8b\x01\n" +
-	"\x10ValidateApprover\x12(.gh.protos.v1.ApproversForAccountRequest\x1a&.gh.protos.v1.ValidateApproverResponse\"%\x82\xd3\xe4\x93\x02\x1f:\x01*\"\x1a/api/v1/approvers/validateB\xc3\x01\n" +
-	"\x10com.gh.protos.v1B\x10UserServiceProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\x10ValidateApprover\x12(.gh.protos.v1.ApproversForAccountRequest\x1a&.gh.protos.v1.ValidateApproverResponse\"%\x82\xd3\xe4\x93\x02\x1f:\x01*\"\x1a/api/v1/approvers/validateB\xb8\x01\n" +
+	"\x10com.gh.protos.v1B\x10UserServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_user_service_proto_goTypes = []any{
 	(*AccountUsersRequest)(nil),         // 0: gh.protos.v1.AccountUsersRequest

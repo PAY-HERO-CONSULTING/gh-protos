@@ -246,8 +246,8 @@ const file_api_auth_v1_password_reset_proto_rawDesc = "" +
 	"\x15password_confirmation\x18\x02 \x01(\tR\x14passwordConfirmation\x12,\n" +
 	"\x12password_reset_key\x18\x03 \x01(\tR\x10passwordResetKey\"1\n" +
 	"\x15ResetPasswordResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccessB\xc5\x01\n" +
-	"\x10com.gh.protos.v1B\x12PasswordResetProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\asuccess\x18\x01 \x01(\bR\asuccessB\xba\x01\n" +
+	"\x10com.gh.protos.v1B\x12PasswordResetProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_password_reset_proto_rawDescOnce sync.Once

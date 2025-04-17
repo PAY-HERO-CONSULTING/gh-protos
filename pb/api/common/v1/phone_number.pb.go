@@ -80,8 +80,8 @@ const file_api_common_v1_phone_number_proto_rawDesc = "" +
 	" api/common/v1/phone_number.proto\x12\fgh.common.v1\"B\n" +
 	"\vPhoneNumber\x12\x1b\n" +
 	"\tdial_code\x18\x01 \x01(\tR\bdialCode\x12\x16\n" +
-	"\x06number\x18\x02 \x01(\tR\x06numberB\xc5\x01\n" +
-	"\x10com.gh.common.v1B\x10PhoneNumberProtoP\x01ZMgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
+	"\x06number\x18\x02 \x01(\tR\x06numberB\xba\x01\n" +
+	"\x10com.gh.common.v1B\x10PhoneNumberProtoP\x01ZBgithub.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
 
 var (
 	file_api_common_v1_phone_number_proto_rawDescOnce sync.Once

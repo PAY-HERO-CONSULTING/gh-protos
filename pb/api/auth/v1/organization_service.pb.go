@@ -29,8 +29,8 @@ const file_api_auth_v1_organization_service_proto_rawDesc = "" +
 	"\x13OrganizationService\x12\x8a\x01\n" +
 	"\x10OrganizationByID\x12%.gh.protos.v1.OrganizationByIDRequest\x1a&.gh.protos.v1.OrganizationByIDResponse\"'\xdaA\x02id\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/organizations/{id}\x12\xa3\x01\n" +
 	"\x13OrganizationByOwner\x12(.gh.protos.v1.OrganizationByOwnerRequest\x1a).gh.protos.v1.OrganizationByOwnerResponse\"7\xdaA\auser_id\x82\xd3\xe4\x93\x02'\x12%/api/v1/organizations/{user_id}/owner\x12\xa6\x01\n" +
-	"\x14OrganizationsForUser\x12).gh.protos.v1.OrganizationsForUserRequest\x1a*.gh.protos.v1.OrganizationsForUserResponse\"7\xdaA\auser_id\x82\xd3\xe4\x93\x02'\x12%/api/v1/users/{user_id}/organizationsB\xcb\x01\n" +
-	"\x10com.gh.protos.v1B\x18OrganizationServiceProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\x14OrganizationsForUser\x12).gh.protos.v1.OrganizationsForUserRequest\x1a*.gh.protos.v1.OrganizationsForUserResponse\"7\xdaA\auser_id\x82\xd3\xe4\x93\x02'\x12%/api/v1/users/{user_id}/organizationsB\xc0\x01\n" +
+	"\x10com.gh.protos.v1B\x18OrganizationServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_organization_service_proto_goTypes = []any{
 	(*OrganizationByIDRequest)(nil),      // 0: gh.protos.v1.OrganizationByIDRequest

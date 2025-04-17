@@ -94,8 +94,8 @@ const file_api_auth_v1_auth_status_proto_rawDesc = "" +
 	"\n" +
 	"\x06banned\x10\x04\x12\n" +
 	"\n" +
-	"\x06active\x10\x05B\xc2\x01\n" +
-	"\x10com.gh.protos.v1B\x0fAuthStatusProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\x06active\x10\x05B\xb7\x01\n" +
+	"\x10com.gh.protos.v1B\x0fAuthStatusProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_auth_status_proto_rawDescOnce sync.Once

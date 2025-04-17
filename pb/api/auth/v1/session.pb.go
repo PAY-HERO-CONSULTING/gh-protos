@@ -7,7 +7,7 @@
 package protosv1
 
 import (
-	_ "github.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1"
+	_ "github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	_ "google.golang.org/protobuf/types/known/timestamppb"
@@ -638,8 +638,8 @@ const file_api_auth_v1_session_proto_rawDesc = "" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\"M\n" +
 	"\x13VerifyTokenResponse\x126\n" +
 	"\n" +
-	"token_info\x18\x01 \x01(\v2\x17.gh.protos.v1.TokenInfoR\ttokenInfoB\xbf\x01\n" +
-	"\x10com.gh.protos.v1B\fSessionProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"token_info\x18\x01 \x01(\v2\x17.gh.protos.v1.TokenInfoR\ttokenInfoB\xb4\x01\n" +
+	"\x10com.gh.protos.v1B\fSessionProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_session_proto_rawDescOnce sync.Once

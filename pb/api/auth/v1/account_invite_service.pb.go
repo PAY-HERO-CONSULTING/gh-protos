@@ -27,8 +27,8 @@ const file_api_auth_v1_account_invite_service_proto_rawDesc = "" +
 	"\n" +
 	"(api/auth/v1/account_invite_service.proto\x12\fgh.protos.v1\x1a api/auth/v1/account_invite.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto2\xa7\x01\n" +
 	"\x14AccountInviteService\x12\x8e\x01\n" +
-	"\x13InviteUserToAccount\x12(.gh.protos.v1.InviteUserToAccountRequest\x1a).gh.protos.v1.InviteUserToAccountResponse\"\"\x82\xd3\xe4\x93\x02\x1c:\x01*\"\x17/api/v1/account_invitesB\xcc\x01\n" +
-	"\x10com.gh.protos.v1B\x19AccountInviteServiceProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\x13InviteUserToAccount\x12(.gh.protos.v1.InviteUserToAccountRequest\x1a).gh.protos.v1.InviteUserToAccountResponse\"\"\x82\xd3\xe4\x93\x02\x1c:\x01*\"\x17/api/v1/account_invitesB\xc1\x01\n" +
+	"\x10com.gh.protos.v1B\x19AccountInviteServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_account_invite_service_proto_goTypes = []any{
 	(*InviteUserToAccountRequest)(nil),  // 0: gh.protos.v1.InviteUserToAccountRequest

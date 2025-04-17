@@ -424,8 +424,8 @@ const file_api_auth_v1_api_key_proto_rawDesc = "" +
 	"\x14CreateAPIKeyResponse\x12-\n" +
 	"\aapi_key\x18\x01 \x01(\v2\x14.gh.protos.v1.APIKeyR\x06apiKey\"G\n" +
 	"\x16ValidateAPIKeyResponse\x12-\n" +
-	"\aapi_key\x18\x01 \x01(\v2\x14.gh.protos.v1.APIKeyR\x06apiKeyB\xbe\x01\n" +
-	"\x10com.gh.protos.v1B\vApiKeyProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\aapi_key\x18\x01 \x01(\v2\x14.gh.protos.v1.APIKeyR\x06apiKeyB\xb3\x01\n" +
+	"\x10com.gh.protos.v1B\vApiKeyProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_api_key_proto_rawDescOnce sync.Once

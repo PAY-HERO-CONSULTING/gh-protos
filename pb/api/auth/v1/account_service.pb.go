@@ -33,8 +33,8 @@ const file_api_auth_v1_account_service_proto_rawDesc = "" +
 	"\rAccountByUUID\x12\".gh.protos.v1.AccountByUUIDRequest\x1a#.gh.protos.v1.AccountByUUIDResponse\"-\xdaA\x04uuid\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/account/{uuid}/profile\x12\xb0\x01\n" +
 	"\x17AccountsForOrganization\x12,.gh.protos.v1.AccountsForOrganizationRequest\x1a-.gh.protos.v1.AccountsForOrganizationResponse\"8\x82\xd3\xe4\x93\x022\x120/api/v1/organizations/{organization_id}/accounts\x12\x87\x01\n" +
 	"\x0fAccountsForUser\x12$.gh.protos.v1.AccountsForUserRequest\x1a%.gh.protos.v1.AccountsForUserResponse\"'\x82\xd3\xe4\x93\x02!\x12\x1f/api/v1/user/{user_id}/accounts\x12u\n" +
-	"\rCreateAccount\x12\".gh.protos.v1.CreateAccountRequest\x1a#.gh.protos.v1.CreateAccountResponse\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/api/v1/accountsB\xc6\x01\n" +
-	"\x10com.gh.protos.v1B\x13AccountServiceProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\rCreateAccount\x12\".gh.protos.v1.CreateAccountRequest\x1a#.gh.protos.v1.CreateAccountResponse\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/api/v1/accountsB\xbb\x01\n" +
+	"\x10com.gh.protos.v1B\x13AccountServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_account_service_proto_goTypes = []any{
 	(*AccountByIDRequest)(nil),              // 0: gh.protos.v1.AccountByIDRequest

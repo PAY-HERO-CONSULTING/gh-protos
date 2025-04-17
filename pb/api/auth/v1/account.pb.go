@@ -7,7 +7,7 @@
 package protosv1
 
 import (
-	v1 "github.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1"
+	v1 "github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -1027,8 +1027,8 @@ const file_api_auth_v1_account_proto_rawDesc = "" +
 	"\x1bAccountByPhoneNumberRequest\x12!\n" +
 	"\fphone_number\x18\x01 \x01(\tR\vphoneNumber\"O\n" +
 	"\x1cAccountByPhoneNumberResponse\x12/\n" +
-	"\aaccount\x18\x01 \x01(\v2\x15.gh.protos.v1.AccountR\aaccountB\xbf\x01\n" +
-	"\x10com.gh.protos.v1B\fAccountProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\aaccount\x18\x01 \x01(\v2\x15.gh.protos.v1.AccountR\aaccountB\xb4\x01\n" +
+	"\x10com.gh.protos.v1B\fAccountProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_account_proto_rawDescOnce sync.Once

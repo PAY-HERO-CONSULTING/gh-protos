@@ -33,8 +33,8 @@ const file_api_auth_v1_session_service_proto_rawDesc = "" +
 	"\n" +
 	"RequestOTP\x12\x1f.gh.protos.v1.RequestOTPRequest\x1a .gh.protos.v1.RequestOTPResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x13/api/v1/request_otp\x12k\n" +
 	"\tVerifyOTP\x12\x1e.gh.protos.v1.VerifyOTPRequest\x1a\x1f.gh.protos.v1.VerifyOTPResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/api/v1/verify_otp\x12y\n" +
-	"\x0eUnblockSession\x12#.gh.protos.v1.UnblockSessionRequest\x1a$.gh.protos.v1.UnblockSessionResponse\"\x1c\x82\xd3\xe4\x93\x02\x16:\x01*\"\x11/api/v1/biblopassB\xc6\x01\n" +
-	"\x10com.gh.protos.v1B\x13SessionServiceProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\x0eUnblockSession\x12#.gh.protos.v1.UnblockSessionRequest\x1a$.gh.protos.v1.UnblockSessionResponse\"\x1c\x82\xd3\xe4\x93\x02\x16:\x01*\"\x11/api/v1/biblopassB\xbb\x01\n" +
+	"\x10com.gh.protos.v1B\x13SessionServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_session_service_proto_goTypes = []any{
 	(*LoginRequest)(nil),           // 0: gh.protos.v1.LoginRequest
