@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package gh.common.v1;
 
-option go_package = "pb/api/auth/v2";
+option go_package = "pb/api/common/v1";
 
 message PhoneNumber {
   string dial_code = 1;
