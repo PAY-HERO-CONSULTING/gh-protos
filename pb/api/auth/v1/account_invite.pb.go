@@ -7,7 +7,7 @@
 package protosv1
 
 import (
-	_ "github.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1"
+	_ "github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -164,8 +164,8 @@ const file_api_auth_v1_account_invite_proto_rawDesc = "" +
 	"\bbase_url\x18\x06 \x01(\tR\abaseUrl\x120\n" +
 	"\x14assigned_account_ids\x18\a \x03(\tR\x12assignedAccountIds\"7\n" +
 	"\x1bInviteUserToAccountResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccessB\xc5\x01\n" +
-	"\x10com.gh.protos.v1B\x12AccountInviteProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\asuccess\x18\x01 \x01(\bR\asuccessB\xba\x01\n" +
+	"\x10com.gh.protos.v1B\x12AccountInviteProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_account_invite_proto_rawDescOnce sync.Once

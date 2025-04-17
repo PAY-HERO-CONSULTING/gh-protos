@@ -173,8 +173,8 @@ const file_api_common_v1_filter_proto_rawDesc = "" +
 	" \x01(\tR\x05email\x121\n" +
 	"\x14transaction_category\x18\v \x01(\tR\x13transactionCategory\x12\x1f\n" +
 	"\vwallet_type\x18\f \x01(\tR\n" +
-	"walletTypeB\xc0\x01\n" +
-	"\x10com.gh.common.v1B\vFilterProtoP\x01ZMgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
+	"walletTypeB\xb5\x01\n" +
+	"\x10com.gh.common.v1B\vFilterProtoP\x01ZBgithub.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
 
 var (
 	file_api_common_v1_filter_proto_rawDescOnce sync.Once

@@ -731,8 +731,8 @@ const file_api_auth_v1_kyc_proto_rawDesc = "" +
 	"\x16KYC_STATUS_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12KYC_STATUS_PENDING\x10\x01\x12\x17\n" +
 	"\x13KYC_STATUS_ACCEPTED\x10\x02\x12\x17\n" +
-	"\x13KYC_STATUS_REJECTED\x10\x03B\xbb\x01\n" +
-	"\x10com.gh.protos.v1B\bKycProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\x13KYC_STATUS_REJECTED\x10\x03B\xb0\x01\n" +
+	"\x10com.gh.protos.v1B\bKycProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_kyc_proto_rawDescOnce sync.Once

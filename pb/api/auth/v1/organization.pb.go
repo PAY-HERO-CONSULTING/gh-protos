@@ -546,8 +546,8 @@ const file_api_auth_v1_organization_proto_rawDesc = "" +
 	"\x1bOrganizationsForUserRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"^\n" +
 	"\x1cOrganizationsForUserResponse\x12>\n" +
-	"\forganization\x18\x01 \x03(\v2\x1a.gh.protos.v1.OrganizationR\forganizationB\xc4\x01\n" +
-	"\x10com.gh.protos.v1B\x11OrganizationProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\forganization\x18\x01 \x03(\v2\x1a.gh.protos.v1.OrganizationR\forganizationB\xb9\x01\n" +
+	"\x10com.gh.protos.v1B\x11OrganizationProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
 	file_api_auth_v1_organization_proto_rawDescOnce sync.Once

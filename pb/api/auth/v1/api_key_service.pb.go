@@ -29,8 +29,8 @@ const file_api_auth_v1_api_key_service_proto_rawDesc = "" +
 	"\rAPIKeyService\x12\x91\x01\n" +
 	"\x10APIKeyByUsername\x12%.gh.protos.v1.APIKeyByUsernameRequest\x1a&.gh.protos.v1.APIKeyByUsernameResponse\".\xdaA\busername\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/v1/api_keys/{username}\x12r\n" +
 	"\fCreateAPIKey\x12!.gh.protos.v1.CreateAPIKeyRequest\x1a\".gh.protos.v1.CreateAPIKeyResponse\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/api/v1/api_keys\x12\x81\x01\n" +
-	"\x0eValidateAPIKey\x12#.gh.protos.v1.ValidateAPIKeyRequest\x1a$.gh.protos.v1.ValidateAPIKeyResponse\"$\x82\xd3\xe4\x93\x02\x1e:\x01*\"\x19/api/v1/api_keys/validateB\xc5\x01\n" +
-	"\x10com.gh.protos.v1B\x12ApiKeyServiceProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\x0eValidateAPIKey\x12#.gh.protos.v1.ValidateAPIKeyRequest\x1a$.gh.protos.v1.ValidateAPIKeyResponse\"$\x82\xd3\xe4\x93\x02\x1e:\x01*\"\x19/api/v1/api_keys/validateB\xba\x01\n" +
+	"\x10com.gh.protos.v1B\x12ApiKeyServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_api_key_service_proto_goTypes = []any{
 	(*APIKeyByUsernameRequest)(nil),  // 0: gh.protos.v1.APIKeyByUsernameRequest

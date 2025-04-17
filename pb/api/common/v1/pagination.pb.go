@@ -117,8 +117,8 @@ const file_api_common_v1_pagination_proto_rawDesc = "" +
 	"\tnum_pages\x18\x03 \x01(\x03R\bnumPages\x12\x12\n" +
 	"\x04page\x18\x04 \x01(\x03R\x04page\x12\x10\n" +
 	"\x03per\x18\x05 \x01(\x03R\x03per\x12\x1b\n" +
-	"\tprev_page\x18\x06 \x01(\x03R\bprevPageB\xc4\x01\n" +
-	"\x10com.gh.common.v1B\x0fPaginationProtoP\x01ZMgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
+	"\tprev_page\x18\x06 \x01(\x03R\bprevPageB\xb9\x01\n" +
+	"\x10com.gh.common.v1B\x0fPaginationProtoP\x01ZBgithub.com/PAY-HERO-CONSULTING/gh-protos/pb/api/common/v1;commonv1\xa2\x02\x03GCX\xaa\x02\fGh.Common.V1\xca\x02\fGh\\Common\\V1\xe2\x02\x18Gh\\Common\\V1\\GPBMetadata\xea\x02\x0eGh::Common::V1b\x06proto3"
 
 var (
 	file_api_common_v1_pagination_proto_rawDescOnce sync.Once

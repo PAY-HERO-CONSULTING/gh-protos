@@ -28,8 +28,8 @@ const file_api_auth_v1_password_reset_service_proto_rawDesc = "" +
 	"(api/auth/v1/password_reset_service.proto\x12\fgh.protos.v1\x1a api/auth/v1/password_reset.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto2\x94\x02\n" +
 	"\x14PasswordResetService\x12\x7f\n" +
 	"\x0eForgotPassword\x12#.gh.protos.v1.ForgotPasswordRequest\x1a$.gh.protos.v1.ForgotPasswordResponse\"\"\x82\xd3\xe4\x93\x02\x1c:\x01*\"\x17/api/v1/forgot-password\x12{\n" +
-	"\rResetPassword\x12\".gh.protos.v1.ResetPasswordRequest\x1a#.gh.protos.v1.ResetPasswordResponse\"!\x82\xd3\xe4\x93\x02\x1b:\x01*\"\x16/api/v1/reset-passwordB\xcc\x01\n" +
-	"\x10com.gh.protos.v1B\x19PasswordResetServiceProtoP\x01ZKgithub.com/github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
+	"\rResetPassword\x12\".gh.protos.v1.ResetPasswordRequest\x1a#.gh.protos.v1.ResetPasswordResponse\"!\x82\xd3\xe4\x93\x02\x1b:\x01*\"\x16/api/v1/reset-passwordB\xc1\x01\n" +
+	"\x10com.gh.protos.v1B\x19PasswordResetServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_password_reset_service_proto_goTypes = []any{
 	(*ForgotPasswordRequest)(nil),  // 0: gh.protos.v1.ForgotPasswordRequest
