@@ -58,6 +58,7 @@ message UserByIDRequest { string user_id = 1; }
 message UserByIDResponse { User user = 1; }
 
 message UserByUsernameRequest { string username = 1; }
+message UserByUsernameResponse { User user = 1; }
 
 message RegisterUserRequest {
   string first_name = 1;

@@ -76,11 +76,11 @@ service UserService {
   }
 
     // UserByID getting a user by id
-  rpc UserByUsername(UserByIDRequest) returns (UserByIDResponse) {
+  rpc UserByUsername(UserByUsernameRequest) returns (UserByUsernameResponse) {
     option (google.api.http) = {
-      get : "/api/v1/users/{user_id}"
+      get : "/api/v1/user_by_username/{username}"
     };
-    option (google.api.method_signature) = "user_id";
+    option (google.api.method_signature) = "username";
   }
 
   // DeleteUser 
