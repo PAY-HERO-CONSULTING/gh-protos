@@ -18,3 +18,4 @@ message FilterQuery {
   string transaction_category = 11;
   string wallet_type = 12;
 }
+
