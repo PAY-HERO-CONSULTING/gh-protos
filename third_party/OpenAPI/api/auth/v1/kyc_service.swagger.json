@@ -1,0 +1,306 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "api/auth/v1/kyc_service.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "KYCService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/kyc": {
+      "post": {
+        "operationId": "KYCService_CreateKYC",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateKYCResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateKYCRequest"
+            }
+          }
+        ],
+        "tags": [
+          "KYCService"
+        ]
+      }
+    },
+    "/api/v1/kyc/{id}": {
+      "get": {
+        "operationId": "KYCService_GetKYCByID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetKYCByIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "KYCService"
+        ]
+      }
+    },
+    "/api/v1/kyc/{phoneNumber}": {
+      "get": {
+        "operationId": "KYCService_GetKYCByPhone",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetKYCByPhoneResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "phoneNumber",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "KYCService"
+        ]
+      }
+    },
+    "/api/v1/kyc_by_account/{accountId}": {
+      "get": {
+        "operationId": "KYCService_GetKYCByAccountID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetKYCByAccountIDResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "KYCService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateKYCRequest": {
+      "type": "object",
+      "properties": {
+        "submission": {
+          "$ref": "#/definitions/v1KYCSubmission"
+        }
+      }
+    },
+    "v1CreateKYCResponse": {
+      "type": "object",
+      "properties": {
+        "submission": {
+          "$ref": "#/definitions/v1KYCSubmission"
+        }
+      }
+    },
+    "v1GetKYCByAccountIDResponse": {
+      "type": "object",
+      "properties": {
+        "submission": {
+          "$ref": "#/definitions/v1KYCSubmission"
+        }
+      }
+    },
+    "v1GetKYCByIDResponse": {
+      "type": "object",
+      "properties": {
+        "submission": {
+          "$ref": "#/definitions/v1KYCSubmission"
+        }
+      }
+    },
+    "v1GetKYCByPhoneResponse": {
+      "type": "object",
+      "properties": {
+        "submission": {
+          "$ref": "#/definitions/v1KYCSubmission"
+        }
+      }
+    },
+    "v1KYCStatus": {
+      "type": "string",
+      "enum": [
+        "KYC_STATUS_UNSPECIFIED",
+        "KYC_STATUS_PENDING",
+        "KYC_STATUS_ACCEPTED",
+        "KYC_STATUS_REJECTED"
+      ],
+      "default": "KYC_STATUS_UNSPECIFIED"
+    },
+    "v1KYCSubmission": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "UUID string"
+        },
+        "userType": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "nationalId": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "businessDescription": {
+          "type": "string"
+        },
+        "taxDocumentNumber": {
+          "type": "string"
+        },
+        "documentType": {
+          "type": "string"
+        },
+        "directorNames": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "idFront": {
+          "type": "string"
+        },
+        "idBack": {
+          "type": "string"
+        },
+        "proofOfAddress": {
+          "type": "string"
+        },
+        "businessRegCert": {
+          "type": "string"
+        },
+        "cr12": {
+          "type": "string"
+        },
+        "taxDocument": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1KYCStatus"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "accountId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "country": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
