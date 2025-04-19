@@ -939,6 +939,94 @@ func (x *AccountByPhoneNumberResponse) GetAccount() *Account {
 	return nil
 }
 
+type AccountsRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	OrganizationId string                 `protobuf:"bytes,1,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *AccountsRequest) Reset() {
+	*x = AccountsRequest{}
+	mi := &file_api_auth_v1_account_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AccountsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AccountsRequest) ProtoMessage() {}
+
+func (x *AccountsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_api_auth_v1_account_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AccountsRequest.ProtoReflect.Descriptor instead.
+func (*AccountsRequest) Descriptor() ([]byte, []int) {
+	return file_api_auth_v1_account_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *AccountsRequest) GetOrganizationId() string {
+	if x != nil {
+		return x.OrganizationId
+	}
+	return ""
+}
+
+type AccountsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Account       *Account               `protobuf:"bytes,1,opt,name=account,proto3" json:"account,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AccountsResponse) Reset() {
+	*x = AccountsResponse{}
+	mi := &file_api_auth_v1_account_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AccountsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AccountsResponse) ProtoMessage() {}
+
+func (x *AccountsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_api_auth_v1_account_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AccountsResponse.ProtoReflect.Descriptor instead.
+func (*AccountsResponse) Descriptor() ([]byte, []int) {
+	return file_api_auth_v1_account_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *AccountsResponse) GetAccount() *Account {
+	if x != nil {
+		return x.Account
+	}
+	return nil
+}
+
 var File_api_auth_v1_account_proto protoreflect.FileDescriptor
 
 const file_api_auth_v1_account_proto_rawDesc = "" +
@@ -1027,6 +1115,10 @@ const file_api_auth_v1_account_proto_rawDesc = "" +
 	"\x1bAccountByPhoneNumberRequest\x12!\n" +
 	"\fphone_number\x18\x01 \x01(\tR\vphoneNumber\"O\n" +
 	"\x1cAccountByPhoneNumberResponse\x12/\n" +
+	"\aaccount\x18\x01 \x01(\v2\x15.gh.protos.v1.AccountR\aaccount\":\n" +
+	"\x0fAccountsRequest\x12'\n" +
+	"\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"C\n" +
+	"\x10AccountsResponse\x12/\n" +
 	"\aaccount\x18\x01 \x01(\v2\x15.gh.protos.v1.AccountR\aaccountB\xb4\x01\n" +
 	"\x10com.gh.protos.v1B\fAccountProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
@@ -1042,7 +1134,7 @@ func file_api_auth_v1_account_proto_rawDescGZIP() []byte {
 	return file_api_auth_v1_account_proto_rawDescData
 }
 
-var file_api_auth_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_api_auth_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_api_auth_v1_account_proto_goTypes = []any{
 	(*CreateAccountRequest)(nil),            // 0: gh.protos.v1.CreateAccountRequest
 	(*Account)(nil),                         // 1: gh.protos.v1.Account
@@ -1057,27 +1149,30 @@ var file_api_auth_v1_account_proto_goTypes = []any{
 	(*AccountsForUserResponse)(nil),         // 10: gh.protos.v1.AccountsForUserResponse
 	(*AccountByPhoneNumberRequest)(nil),     // 11: gh.protos.v1.AccountByPhoneNumberRequest
 	(*AccountByPhoneNumberResponse)(nil),    // 12: gh.protos.v1.AccountByPhoneNumberResponse
-	(AuthStatus)(0),                         // 13: gh.protos.v1.AuthStatus
-	(*timestamppb.Timestamp)(nil),           // 14: google.protobuf.Timestamp
-	(*v1.Pagination)(nil),                   // 15: gh.common.v1.Pagination
+	(*AccountsRequest)(nil),                 // 13: gh.protos.v1.AccountsRequest
+	(*AccountsResponse)(nil),                // 14: gh.protos.v1.AccountsResponse
+	(AuthStatus)(0),                         // 15: gh.protos.v1.AuthStatus
+	(*timestamppb.Timestamp)(nil),           // 16: google.protobuf.Timestamp
+	(*v1.Pagination)(nil),                   // 17: gh.common.v1.Pagination
 }
 var file_api_auth_v1_account_proto_depIdxs = []int32{
-	13, // 0: gh.protos.v1.Account.status:type_name -> gh.protos.v1.AuthStatus
-	14, // 1: gh.protos.v1.Account.created_at:type_name -> google.protobuf.Timestamp
-	14, // 2: gh.protos.v1.Account.updated_at:type_name -> google.protobuf.Timestamp
+	15, // 0: gh.protos.v1.Account.status:type_name -> gh.protos.v1.AuthStatus
+	16, // 1: gh.protos.v1.Account.created_at:type_name -> google.protobuf.Timestamp
+	16, // 2: gh.protos.v1.Account.updated_at:type_name -> google.protobuf.Timestamp
 	1,  // 3: gh.protos.v1.CreateAccountResponse.account:type_name -> gh.protos.v1.Account
 	1,  // 4: gh.protos.v1.AccountByIDResponse.account:type_name -> gh.protos.v1.Account
 	1,  // 5: gh.protos.v1.AccountByUUIDResponse.account:type_name -> gh.protos.v1.Account
 	1,  // 6: gh.protos.v1.AccountsForOrganizationResponse.accounts:type_name -> gh.protos.v1.Account
-	15, // 7: gh.protos.v1.AccountsForOrganizationResponse.pagination:type_name -> gh.common.v1.Pagination
+	17, // 7: gh.protos.v1.AccountsForOrganizationResponse.pagination:type_name -> gh.common.v1.Pagination
 	1,  // 8: gh.protos.v1.AccountsForUserResponse.accounts:type_name -> gh.protos.v1.Account
-	15, // 9: gh.protos.v1.AccountsForUserResponse.pagination:type_name -> gh.common.v1.Pagination
+	17, // 9: gh.protos.v1.AccountsForUserResponse.pagination:type_name -> gh.common.v1.Pagination
 	1,  // 10: gh.protos.v1.AccountByPhoneNumberResponse.account:type_name -> gh.protos.v1.Account
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	1,  // 11: gh.protos.v1.AccountsResponse.account:type_name -> gh.protos.v1.Account
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_api_auth_v1_account_proto_init() }
@@ -1092,7 +1187,7 @@ func file_api_auth_v1_account_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_auth_v1_account_proto_rawDesc), len(file_api_auth_v1_account_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

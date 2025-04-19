@@ -25,7 +25,7 @@ var File_api_auth_v1_account_service_proto protoreflect.FileDescriptor
 
 const file_api_auth_v1_account_service_proto_rawDesc = "" +
 	"\n" +
-	"!api/auth/v1/account_service.proto\x12\fgh.protos.v1\x1a\x19api/auth/v1/account.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto2\x8d\a\n" +
+	"!api/auth/v1/account_service.proto\x12\fgh.protos.v1\x1a\x19api/auth/v1/account.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto2\xf2\a\n" +
 	"\x0eAccountService\x12\x85\x01\n" +
 	"\vAccountByID\x12 .gh.protos.v1.AccountByIDRequest\x1a!.gh.protos.v1.AccountByIDResponse\"1\xdaA\n" +
 	"account_id\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/v1/account/{account_id}\x12\xb4\x01\n" +
@@ -33,7 +33,8 @@ const file_api_auth_v1_account_service_proto_rawDesc = "" +
 	"\rAccountByUUID\x12\".gh.protos.v1.AccountByUUIDRequest\x1a#.gh.protos.v1.AccountByUUIDResponse\"-\xdaA\x04uuid\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/account/{uuid}/profile\x12\xb0\x01\n" +
 	"\x17AccountsForOrganization\x12,.gh.protos.v1.AccountsForOrganizationRequest\x1a-.gh.protos.v1.AccountsForOrganizationResponse\"8\x82\xd3\xe4\x93\x022\x120/api/v1/organizations/{organization_id}/accounts\x12\x87\x01\n" +
 	"\x0fAccountsForUser\x12$.gh.protos.v1.AccountsForUserRequest\x1a%.gh.protos.v1.AccountsForUserResponse\"'\x82\xd3\xe4\x93\x02!\x12\x1f/api/v1/user/{user_id}/accounts\x12u\n" +
-	"\rCreateAccount\x12\".gh.protos.v1.CreateAccountRequest\x1a#.gh.protos.v1.CreateAccountResponse\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/api/v1/accountsB\xbb\x01\n" +
+	"\rCreateAccount\x12\".gh.protos.v1.CreateAccountRequest\x1a#.gh.protos.v1.CreateAccountResponse\"\x1b\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/api/v1/accounts\x12c\n" +
+	"\bAccounts\x12\x1d.gh.protos.v1.AccountsRequest\x1a\x1e.gh.protos.v1.AccountsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/api/v1/accountsB\xbb\x01\n" +
 	"\x10com.gh.protos.v1B\x13AccountServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_account_service_proto_goTypes = []any{
@@ -43,12 +44,14 @@ var file_api_auth_v1_account_service_proto_goTypes = []any{
 	(*AccountsForOrganizationRequest)(nil),  // 3: gh.protos.v1.AccountsForOrganizationRequest
 	(*AccountsForUserRequest)(nil),          // 4: gh.protos.v1.AccountsForUserRequest
 	(*CreateAccountRequest)(nil),            // 5: gh.protos.v1.CreateAccountRequest
-	(*AccountByIDResponse)(nil),             // 6: gh.protos.v1.AccountByIDResponse
-	(*AccountByPhoneNumberResponse)(nil),    // 7: gh.protos.v1.AccountByPhoneNumberResponse
-	(*AccountByUUIDResponse)(nil),           // 8: gh.protos.v1.AccountByUUIDResponse
-	(*AccountsForOrganizationResponse)(nil), // 9: gh.protos.v1.AccountsForOrganizationResponse
-	(*AccountsForUserResponse)(nil),         // 10: gh.protos.v1.AccountsForUserResponse
-	(*CreateAccountResponse)(nil),           // 11: gh.protos.v1.CreateAccountResponse
+	(*AccountsRequest)(nil),                 // 6: gh.protos.v1.AccountsRequest
+	(*AccountByIDResponse)(nil),             // 7: gh.protos.v1.AccountByIDResponse
+	(*AccountByPhoneNumberResponse)(nil),    // 8: gh.protos.v1.AccountByPhoneNumberResponse
+	(*AccountByUUIDResponse)(nil),           // 9: gh.protos.v1.AccountByUUIDResponse
+	(*AccountsForOrganizationResponse)(nil), // 10: gh.protos.v1.AccountsForOrganizationResponse
+	(*AccountsForUserResponse)(nil),         // 11: gh.protos.v1.AccountsForUserResponse
+	(*CreateAccountResponse)(nil),           // 12: gh.protos.v1.CreateAccountResponse
+	(*AccountsResponse)(nil),                // 13: gh.protos.v1.AccountsResponse
 }
 var file_api_auth_v1_account_service_proto_depIdxs = []int32{
 	0,  // 0: gh.protos.v1.AccountService.AccountByID:input_type -> gh.protos.v1.AccountByIDRequest
@@ -57,14 +60,16 @@ var file_api_auth_v1_account_service_proto_depIdxs = []int32{
 	3,  // 3: gh.protos.v1.AccountService.AccountsForOrganization:input_type -> gh.protos.v1.AccountsForOrganizationRequest
 	4,  // 4: gh.protos.v1.AccountService.AccountsForUser:input_type -> gh.protos.v1.AccountsForUserRequest
 	5,  // 5: gh.protos.v1.AccountService.CreateAccount:input_type -> gh.protos.v1.CreateAccountRequest
-	6,  // 6: gh.protos.v1.AccountService.AccountByID:output_type -> gh.protos.v1.AccountByIDResponse
-	7,  // 7: gh.protos.v1.AccountService.AccountByPhoneNumber:output_type -> gh.protos.v1.AccountByPhoneNumberResponse
-	8,  // 8: gh.protos.v1.AccountService.AccountByUUID:output_type -> gh.protos.v1.AccountByUUIDResponse
-	9,  // 9: gh.protos.v1.AccountService.AccountsForOrganization:output_type -> gh.protos.v1.AccountsForOrganizationResponse
-	10, // 10: gh.protos.v1.AccountService.AccountsForUser:output_type -> gh.protos.v1.AccountsForUserResponse
-	11, // 11: gh.protos.v1.AccountService.CreateAccount:output_type -> gh.protos.v1.CreateAccountResponse
-	6,  // [6:12] is the sub-list for method output_type
-	0,  // [0:6] is the sub-list for method input_type
+	6,  // 6: gh.protos.v1.AccountService.Accounts:input_type -> gh.protos.v1.AccountsRequest
+	7,  // 7: gh.protos.v1.AccountService.AccountByID:output_type -> gh.protos.v1.AccountByIDResponse
+	8,  // 8: gh.protos.v1.AccountService.AccountByPhoneNumber:output_type -> gh.protos.v1.AccountByPhoneNumberResponse
+	9,  // 9: gh.protos.v1.AccountService.AccountByUUID:output_type -> gh.protos.v1.AccountByUUIDResponse
+	10, // 10: gh.protos.v1.AccountService.AccountsForOrganization:output_type -> gh.protos.v1.AccountsForOrganizationResponse
+	11, // 11: gh.protos.v1.AccountService.AccountsForUser:output_type -> gh.protos.v1.AccountsForUserResponse
+	12, // 12: gh.protos.v1.AccountService.CreateAccount:output_type -> gh.protos.v1.CreateAccountResponse
+	13, // 13: gh.protos.v1.AccountService.Accounts:output_type -> gh.protos.v1.AccountsResponse
+	7,  // [7:14] is the sub-list for method output_type
+	0,  // [0:7] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
