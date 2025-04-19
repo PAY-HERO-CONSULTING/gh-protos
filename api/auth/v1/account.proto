@@ -96,3 +96,11 @@ message AccountByPhoneNumberRequest {
 message AccountByPhoneNumberResponse {
   Account account = 1;
 }
+
+message AccountsRequest {
+  string organization_id = 1;
+}
+
+message AccountsResponse {
+  Account account = 1;
+}

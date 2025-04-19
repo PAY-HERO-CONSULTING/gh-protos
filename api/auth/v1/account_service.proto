@@ -51,4 +51,11 @@ service AccountService {
       body : "*"
     };
   }
+
+  // AccountsForUser returns accounts that a user belongs to
+  rpc Accounts(AccountsRequest) returns (AccountsResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/accounts"
+    };
+  }
 }
