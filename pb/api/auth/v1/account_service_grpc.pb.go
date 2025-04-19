@@ -25,6 +25,7 @@ const (
 	AccountService_AccountsForOrganization_FullMethodName = "/gh.protos.v1.AccountService/AccountsForOrganization"
 	AccountService_AccountsForUser_FullMethodName         = "/gh.protos.v1.AccountService/AccountsForUser"
 	AccountService_CreateAccount_FullMethodName           = "/gh.protos.v1.AccountService/CreateAccount"
+	AccountService_Accounts_FullMethodName                = "/gh.protos.v1.AccountService/Accounts"
 )
 
 // AccountServiceClient is the client API for AccountService service.
@@ -43,6 +44,8 @@ type AccountServiceClient interface {
 	AccountsForUser(ctx context.Context, in *AccountsForUserRequest, opts ...grpc.CallOption) (*AccountsForUserResponse, error)
 	// CreateAccount create a new account for an organization
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
+	// AccountsForUser returns accounts that a user belongs to
+	Accounts(ctx context.Context, in *AccountsRequest, opts ...grpc.CallOption) (*AccountsResponse, error)
 }
 
 type accountServiceClient struct {
@@ -113,6 +116,16 @@ func (c *accountServiceClient) CreateAccount(ctx context.Context, in *CreateAcco
 	return out, nil
 }
 
+func (c *accountServiceClient) Accounts(ctx context.Context, in *AccountsRequest, opts ...grpc.CallOption) (*AccountsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AccountsResponse)
+	err := c.cc.Invoke(ctx, AccountService_Accounts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServiceServer is the server API for AccountService service.
 // All implementations must embed UnimplementedAccountServiceServer
 // for forward compatibility.
@@ -129,6 +142,8 @@ type AccountServiceServer interface {
 	AccountsForUser(context.Context, *AccountsForUserRequest) (*AccountsForUserResponse, error)
 	// CreateAccount create a new account for an organization
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
+	// AccountsForUser returns accounts that a user belongs to
+	Accounts(context.Context, *AccountsRequest) (*AccountsResponse, error)
 	mustEmbedUnimplementedAccountServiceServer()
 }
 
@@ -156,6 +171,9 @@ func (UnimplementedAccountServiceServer) AccountsForUser(context.Context, *Accou
 }
 func (UnimplementedAccountServiceServer) CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccount not implemented")
+}
+func (UnimplementedAccountServiceServer) Accounts(context.Context, *AccountsRequest) (*AccountsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Accounts not implemented")
 }
 func (UnimplementedAccountServiceServer) mustEmbedUnimplementedAccountServiceServer() {}
 func (UnimplementedAccountServiceServer) testEmbeddedByValue()                        {}
@@ -286,6 +304,24 @@ func _AccountService_CreateAccount_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_Accounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AccountsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).Accounts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AccountService_Accounts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).Accounts(ctx, req.(*AccountsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -316,6 +352,10 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAccount",
 			Handler:    _AccountService_CreateAccount_Handler,
+		},
+		{
+			MethodName: "Accounts",
+			Handler:    _AccountService_Accounts_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

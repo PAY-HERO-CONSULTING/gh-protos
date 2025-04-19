@@ -122,6 +122,35 @@
       }
     },
     "/api/v1/accounts": {
+      "get": {
+        "summary": "AccountsForUser returns accounts that a user belongs to",
+        "operationId": "AccountService_Accounts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AccountsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      },
       "post": {
         "summary": "CreateAccount create a new account for an organization",
         "operationId": "AccountService_CreateAccount",
@@ -418,6 +447,14 @@
         },
         "pagination": {
           "$ref": "#/definitions/v1Pagination"
+        }
+      }
+    },
+    "v1AccountsResponse": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/v1Account"
         }
       }
     },
