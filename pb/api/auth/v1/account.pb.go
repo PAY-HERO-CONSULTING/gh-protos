@@ -985,7 +985,7 @@ func (x *AccountsRequest) GetOrganizationId() string {
 
 type AccountsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Account       *Account               `protobuf:"bytes,1,opt,name=account,proto3" json:"account,omitempty"`
+	Accounts      []*Account             `protobuf:"bytes,1,rep,name=accounts,proto3" json:"accounts,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1020,9 +1020,9 @@ func (*AccountsResponse) Descriptor() ([]byte, []int) {
 	return file_api_auth_v1_account_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *AccountsResponse) GetAccount() *Account {
+func (x *AccountsResponse) GetAccounts() []*Account {
 	if x != nil {
-		return x.Account
+		return x.Accounts
 	}
 	return nil
 }
@@ -1117,9 +1117,9 @@ const file_api_auth_v1_account_proto_rawDesc = "" +
 	"\x1cAccountByPhoneNumberResponse\x12/\n" +
 	"\aaccount\x18\x01 \x01(\v2\x15.gh.protos.v1.AccountR\aaccount\":\n" +
 	"\x0fAccountsRequest\x12'\n" +
-	"\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"C\n" +
-	"\x10AccountsResponse\x12/\n" +
-	"\aaccount\x18\x01 \x01(\v2\x15.gh.protos.v1.AccountR\aaccountB\xb4\x01\n" +
+	"\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"E\n" +
+	"\x10AccountsResponse\x121\n" +
+	"\baccounts\x18\x01 \x03(\v2\x15.gh.protos.v1.AccountR\baccountsB\xb4\x01\n" +
 	"\x10com.gh.protos.v1B\fAccountProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
@@ -1167,7 +1167,7 @@ var file_api_auth_v1_account_proto_depIdxs = []int32{
 	1,  // 8: gh.protos.v1.AccountsForUserResponse.accounts:type_name -> gh.protos.v1.Account
 	17, // 9: gh.protos.v1.AccountsForUserResponse.pagination:type_name -> gh.common.v1.Pagination
 	1,  // 10: gh.protos.v1.AccountByPhoneNumberResponse.account:type_name -> gh.protos.v1.Account
-	1,  // 11: gh.protos.v1.AccountsResponse.account:type_name -> gh.protos.v1.Account
+	1,  // 11: gh.protos.v1.AccountsResponse.accounts:type_name -> gh.protos.v1.Account
 	12, // [12:12] is the sub-list for method output_type
 	12, // [12:12] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name

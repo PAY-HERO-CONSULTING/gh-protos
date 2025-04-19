@@ -453,8 +453,12 @@
     "v1AccountsResponse": {
       "type": "object",
       "properties": {
-        "account": {
-          "$ref": "#/definitions/v1Account"
+        "accounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Account"
+          }
         }
       }
     },

@@ -102,5 +102,5 @@ message AccountsRequest {
 }
 
 message AccountsResponse {
-  Account account = 1;
+  repeated Account accounts = 1;
 }
