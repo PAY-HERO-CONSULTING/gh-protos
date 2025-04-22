@@ -32,6 +32,7 @@ const (
 	UserService_DeleteUser_FullMethodName          = "/gh.protos.v1.UserService/DeleteUser"
 	UserService_ApproversForAccount_FullMethodName = "/gh.protos.v1.UserService/ApproversForAccount"
 	UserService_ValidateApprover_FullMethodName    = "/gh.protos.v1.UserService/ValidateApprover"
+	UserService_DepartmentUsers_FullMethodName     = "/gh.protos.v1.UserService/DepartmentUsers"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -63,6 +64,8 @@ type UserServiceClient interface {
 	// DeleteUser
 	ApproversForAccount(ctx context.Context, in *ApproversForAccountRequest, opts ...grpc.CallOption) (*ApproversForAccountResponse, error)
 	ValidateApprover(ctx context.Context, in *ApproversForAccountRequest, opts ...grpc.CallOption) (*ValidateApproverResponse, error)
+	// Department Users getting department users
+	DepartmentUsers(ctx context.Context, in *DepartmentUsersRequest, opts ...grpc.CallOption) (*DepartmentUsersResponse, error)
 }
 
 type userServiceClient struct {
@@ -203,6 +206,16 @@ func (c *userServiceClient) ValidateApprover(ctx context.Context, in *ApproversF
 	return out, nil
 }
 
+func (c *userServiceClient) DepartmentUsers(ctx context.Context, in *DepartmentUsersRequest, opts ...grpc.CallOption) (*DepartmentUsersResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DepartmentUsersResponse)
+	err := c.cc.Invoke(ctx, UserService_DepartmentUsers_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
@@ -232,6 +245,8 @@ type UserServiceServer interface {
 	// DeleteUser
 	ApproversForAccount(context.Context, *ApproversForAccountRequest) (*ApproversForAccountResponse, error)
 	ValidateApprover(context.Context, *ApproversForAccountRequest) (*ValidateApproverResponse, error)
+	// Department Users getting department users
+	DepartmentUsers(context.Context, *DepartmentUsersRequest) (*DepartmentUsersResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -280,6 +295,9 @@ func (UnimplementedUserServiceServer) ApproversForAccount(context.Context, *Appr
 }
 func (UnimplementedUserServiceServer) ValidateApprover(context.Context, *ApproversForAccountRequest) (*ValidateApproverResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateApprover not implemented")
+}
+func (UnimplementedUserServiceServer) DepartmentUsers(context.Context, *DepartmentUsersRequest) (*DepartmentUsersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DepartmentUsers not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 func (UnimplementedUserServiceServer) testEmbeddedByValue()                     {}
@@ -536,6 +554,24 @@ func _UserService_ValidateApprover_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_DepartmentUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DepartmentUsersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).DepartmentUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_DepartmentUsers_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).DepartmentUsers(ctx, req.(*DepartmentUsersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -594,6 +630,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ValidateApprover",
 			Handler:    _UserService_ValidateApprover_Handler,
+		},
+		{
+			MethodName: "DepartmentUsers",
+			Handler:    _UserService_DepartmentUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

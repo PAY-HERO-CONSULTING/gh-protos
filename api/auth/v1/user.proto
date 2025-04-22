@@ -134,3 +134,12 @@ message ValidateApproverRequest {
 message ValidateApproverResponse {
   bool success = 1;
 }
+
+
+message DepartmentUsersRequest {
+  string department_id = 1;
+}
+
+message DepartmentUsersResponse {
+  repeated User users = 1;
+}

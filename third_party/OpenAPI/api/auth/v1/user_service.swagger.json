@@ -141,6 +141,37 @@
         ]
       }
     },
+    "/api/v1/departments/{departmentId}/users": {
+      "get": {
+        "summary": "Department Users getting department users",
+        "operationId": "UserService_DepartmentUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DepartmentUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "departmentId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
     "/api/v1/email_activations": {
       "post": {
         "summary": "ActivateUserEmail used to activate emails",
@@ -580,6 +611,18 @@
       "properties": {
         "user": {
           "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1DepartmentUsersResponse": {
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1User"
+          }
         }
       }
     },

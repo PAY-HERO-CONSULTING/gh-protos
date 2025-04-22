@@ -1563,6 +1563,94 @@ func (x *ValidateApproverResponse) GetSuccess() bool {
 	return false
 }
 
+type DepartmentUsersRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DepartmentId  string                 `protobuf:"bytes,1,opt,name=department_id,json=departmentId,proto3" json:"department_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DepartmentUsersRequest) Reset() {
+	*x = DepartmentUsersRequest{}
+	mi := &file_api_auth_v1_user_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DepartmentUsersRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepartmentUsersRequest) ProtoMessage() {}
+
+func (x *DepartmentUsersRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_api_auth_v1_user_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepartmentUsersRequest.ProtoReflect.Descriptor instead.
+func (*DepartmentUsersRequest) Descriptor() ([]byte, []int) {
+	return file_api_auth_v1_user_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *DepartmentUsersRequest) GetDepartmentId() string {
+	if x != nil {
+		return x.DepartmentId
+	}
+	return ""
+}
+
+type DepartmentUsersResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Users         []*User                `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DepartmentUsersResponse) Reset() {
+	*x = DepartmentUsersResponse{}
+	mi := &file_api_auth_v1_user_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DepartmentUsersResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepartmentUsersResponse) ProtoMessage() {}
+
+func (x *DepartmentUsersResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_api_auth_v1_user_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepartmentUsersResponse.ProtoReflect.Descriptor instead.
+func (*DepartmentUsersResponse) Descriptor() ([]byte, []int) {
+	return file_api_auth_v1_user_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *DepartmentUsersResponse) GetUsers() []*User {
+	if x != nil {
+		return x.Users
+	}
+	return nil
+}
+
 var File_api_auth_v1_user_proto protoreflect.FileDescriptor
 
 const file_api_auth_v1_user_proto_rawDesc = "" +
@@ -1675,7 +1763,11 @@ const file_api_auth_v1_user_proto_rawDesc = "" +
 	"\n" +
 	"account_id\x18\x03 \x01(\tR\taccountId\"4\n" +
 	"\x18ValidateApproverResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccessB\xb1\x01\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"=\n" +
+	"\x16DepartmentUsersRequest\x12#\n" +
+	"\rdepartment_id\x18\x01 \x01(\tR\fdepartmentId\"C\n" +
+	"\x17DepartmentUsersResponse\x12(\n" +
+	"\x05users\x18\x01 \x03(\v2\x12.gh.protos.v1.UserR\x05usersB\xb1\x01\n" +
 	"\x10com.gh.protos.v1B\tUserProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var (
@@ -1690,7 +1782,7 @@ func file_api_auth_v1_user_proto_rawDescGZIP() []byte {
 	return file_api_auth_v1_user_proto_rawDescData
 }
 
-var file_api_auth_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
+var file_api_auth_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
 var file_api_auth_v1_user_proto_goTypes = []any{
 	(*User)(nil),                        // 0: gh.protos.v1.User
 	(*ChangePasswordRequest)(nil),       // 1: gh.protos.v1.ChangePasswordRequest
@@ -1719,18 +1811,20 @@ var file_api_auth_v1_user_proto_goTypes = []any{
 	(*ApproversForAccountResponse)(nil), // 24: gh.protos.v1.ApproversForAccountResponse
 	(*ValidateApproverRequest)(nil),     // 25: gh.protos.v1.ValidateApproverRequest
 	(*ValidateApproverResponse)(nil),    // 26: gh.protos.v1.ValidateApproverResponse
-	(*v1.PhoneNumber)(nil),              // 27: gh.common.v1.PhoneNumber
-	(AuthStatus)(0),                     // 28: gh.protos.v1.AuthStatus
-	(*timestamppb.Timestamp)(nil),       // 29: google.protobuf.Timestamp
+	(*DepartmentUsersRequest)(nil),      // 27: gh.protos.v1.DepartmentUsersRequest
+	(*DepartmentUsersResponse)(nil),     // 28: gh.protos.v1.DepartmentUsersResponse
+	(*v1.PhoneNumber)(nil),              // 29: gh.common.v1.PhoneNumber
+	(AuthStatus)(0),                     // 30: gh.protos.v1.AuthStatus
+	(*timestamppb.Timestamp)(nil),       // 31: google.protobuf.Timestamp
 }
 var file_api_auth_v1_user_proto_depIdxs = []int32{
-	27, // 0: gh.protos.v1.User.phone_number:type_name -> gh.common.v1.PhoneNumber
-	28, // 1: gh.protos.v1.User.status:type_name -> gh.protos.v1.AuthStatus
-	29, // 2: gh.protos.v1.User.date_of_birth:type_name -> google.protobuf.Timestamp
-	29, // 3: gh.protos.v1.User.created_at:type_name -> google.protobuf.Timestamp
-	29, // 4: gh.protos.v1.User.updated_at:type_name -> google.protobuf.Timestamp
+	29, // 0: gh.protos.v1.User.phone_number:type_name -> gh.common.v1.PhoneNumber
+	30, // 1: gh.protos.v1.User.status:type_name -> gh.protos.v1.AuthStatus
+	31, // 2: gh.protos.v1.User.date_of_birth:type_name -> google.protobuf.Timestamp
+	31, // 3: gh.protos.v1.User.created_at:type_name -> google.protobuf.Timestamp
+	31, // 4: gh.protos.v1.User.updated_at:type_name -> google.protobuf.Timestamp
 	0,  // 5: gh.protos.v1.ChangePasswordResponse.user:type_name -> gh.protos.v1.User
-	29, // 6: gh.protos.v1.UpdateUserRequest.date_of_birth:type_name -> google.protobuf.Timestamp
+	31, // 6: gh.protos.v1.UpdateUserRequest.date_of_birth:type_name -> google.protobuf.Timestamp
 	0,  // 7: gh.protos.v1.UpdateUserResponse.user:type_name -> gh.protos.v1.User
 	0,  // 8: gh.protos.v1.UserByIDResponse.user:type_name -> gh.protos.v1.User
 	0,  // 9: gh.protos.v1.UserByUsernameResponse.user:type_name -> gh.protos.v1.User
@@ -1740,11 +1834,12 @@ var file_api_auth_v1_user_proto_depIdxs = []int32{
 	0,  // 13: gh.protos.v1.DeleteUserResponse.user:type_name -> gh.protos.v1.User
 	0,  // 14: gh.protos.v1.AccountUsersResponse.users:type_name -> gh.protos.v1.User
 	0,  // 15: gh.protos.v1.ApproversForAccountResponse.users:type_name -> gh.protos.v1.User
-	16, // [16:16] is the sub-list for method output_type
-	16, // [16:16] is the sub-list for method input_type
-	16, // [16:16] is the sub-list for extension type_name
-	16, // [16:16] is the sub-list for extension extendee
-	0,  // [0:16] is the sub-list for field type_name
+	0,  // 16: gh.protos.v1.DepartmentUsersResponse.users:type_name -> gh.protos.v1.User
+	17, // [17:17] is the sub-list for method output_type
+	17, // [17:17] is the sub-list for method input_type
+	17, // [17:17] is the sub-list for extension type_name
+	17, // [17:17] is the sub-list for extension extendee
+	0,  // [0:17] is the sub-list for field type_name
 }
 
 func init() { file_api_auth_v1_user_proto_init() }
@@ -1759,7 +1854,7 @@ func file_api_auth_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_auth_v1_user_proto_rawDesc), len(file_api_auth_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   27,
+			NumMessages:   29,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -25,7 +25,7 @@ var File_api_auth_v1_user_service_proto protoreflect.FileDescriptor
 
 const file_api_auth_v1_user_service_proto_rawDesc = "" +
 	"\n" +
-	"\x1eapi/auth/v1/user_service.proto\x12\fgh.protos.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x16api/auth/v1/user.proto2\xed\r\n" +
+	"\x1eapi/auth/v1/user_service.proto\x12\fgh.protos.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x16api/auth/v1/user.proto2\x91\x0f\n" +
 	"\vUserService\x12\x8f\x01\n" +
 	"\fAccountUsers\x12!.gh.protos.v1.AccountUsersRequest\x1a\".gh.protos.v1.AccountUsersResponse\"8\xdaA\n" +
 	"account_id\x82\xd3\xe4\x93\x02%\x12#/api/v1/accounts/{account_id}/users\x12\x8a\x01\n" +
@@ -43,7 +43,8 @@ const file_api_auth_v1_user_service_proto_rawDesc = "" +
 	"DeleteUser\x12\x1f.gh.protos.v1.DeleteUserRequest\x1a .gh.protos.v1.DeleteUserResponse\"(\xdaA\busername\x82\xd3\xe4\x93\x02\x17*\x15/api/users/{username}\x12\xa8\x01\n" +
 	"\x13ApproversForAccount\x12(.gh.protos.v1.ApproversForAccountRequest\x1a).gh.protos.v1.ApproversForAccountResponse\"<\xdaA\n" +
 	"account_id\x82\xd3\xe4\x93\x02)\x12'/api/v1/accounts/{account_id}/approvers\x12\x8b\x01\n" +
-	"\x10ValidateApprover\x12(.gh.protos.v1.ApproversForAccountRequest\x1a&.gh.protos.v1.ValidateApproverResponse\"%\x82\xd3\xe4\x93\x02\x1f:\x01*\"\x1a/api/v1/approvers/validateB\xb8\x01\n" +
+	"\x10ValidateApprover\x12(.gh.protos.v1.ApproversForAccountRequest\x1a&.gh.protos.v1.ValidateApproverResponse\"%\x82\xd3\xe4\x93\x02\x1f:\x01*\"\x1a/api/v1/approvers/validate\x12\xa1\x01\n" +
+	"\x0fDepartmentUsers\x12$.gh.protos.v1.DepartmentUsersRequest\x1a%.gh.protos.v1.DepartmentUsersResponse\"A\xdaA\rdepartment_id\x82\xd3\xe4\x93\x02+\x12)/api/v1/departments/{department_id}/usersB\xb8\x01\n" +
 	"\x10com.gh.protos.v1B\x10UserServiceProtoP\x01Z@github.com/PAY-HERO-CONSULTING/gh-protos/pb/api/auth/v1;protosv1\xa2\x02\x03GPX\xaa\x02\fGh.Protos.V1\xca\x02\fGh\\Protos\\V1\xe2\x02\x18Gh\\Protos\\V1\\GPBMetadata\xea\x02\x0eGh::Protos::V1b\x06proto3"
 
 var file_api_auth_v1_user_service_proto_goTypes = []any{
@@ -59,19 +60,21 @@ var file_api_auth_v1_user_service_proto_goTypes = []any{
 	(*UserByUsernameRequest)(nil),       // 9: gh.protos.v1.UserByUsernameRequest
 	(*DeleteUserRequest)(nil),           // 10: gh.protos.v1.DeleteUserRequest
 	(*ApproversForAccountRequest)(nil),  // 11: gh.protos.v1.ApproversForAccountRequest
-	(*AccountUsersResponse)(nil),        // 12: gh.protos.v1.AccountUsersResponse
-	(*ActivateUserEmailResponse)(nil),   // 13: gh.protos.v1.ActivateUserEmailResponse
-	(*ActivateUserPhoneResponse)(nil),   // 14: gh.protos.v1.ActivateUserPhoneResponse
-	(*ChangePasswordResponse)(nil),      // 15: gh.protos.v1.ChangePasswordResponse
-	(*RegisterUserResponse)(nil),        // 16: gh.protos.v1.RegisterUserResponse
-	(*SendEmailCodeResponse)(nil),       // 17: gh.protos.v1.SendEmailCodeResponse
-	(*SendPhoneCodeResponse)(nil),       // 18: gh.protos.v1.SendPhoneCodeResponse
-	(*UpdateUserResponse)(nil),          // 19: gh.protos.v1.UpdateUserResponse
-	(*UserByIDResponse)(nil),            // 20: gh.protos.v1.UserByIDResponse
-	(*UserByUsernameResponse)(nil),      // 21: gh.protos.v1.UserByUsernameResponse
-	(*DeleteUserResponse)(nil),          // 22: gh.protos.v1.DeleteUserResponse
-	(*ApproversForAccountResponse)(nil), // 23: gh.protos.v1.ApproversForAccountResponse
-	(*ValidateApproverResponse)(nil),    // 24: gh.protos.v1.ValidateApproverResponse
+	(*DepartmentUsersRequest)(nil),      // 12: gh.protos.v1.DepartmentUsersRequest
+	(*AccountUsersResponse)(nil),        // 13: gh.protos.v1.AccountUsersResponse
+	(*ActivateUserEmailResponse)(nil),   // 14: gh.protos.v1.ActivateUserEmailResponse
+	(*ActivateUserPhoneResponse)(nil),   // 15: gh.protos.v1.ActivateUserPhoneResponse
+	(*ChangePasswordResponse)(nil),      // 16: gh.protos.v1.ChangePasswordResponse
+	(*RegisterUserResponse)(nil),        // 17: gh.protos.v1.RegisterUserResponse
+	(*SendEmailCodeResponse)(nil),       // 18: gh.protos.v1.SendEmailCodeResponse
+	(*SendPhoneCodeResponse)(nil),       // 19: gh.protos.v1.SendPhoneCodeResponse
+	(*UpdateUserResponse)(nil),          // 20: gh.protos.v1.UpdateUserResponse
+	(*UserByIDResponse)(nil),            // 21: gh.protos.v1.UserByIDResponse
+	(*UserByUsernameResponse)(nil),      // 22: gh.protos.v1.UserByUsernameResponse
+	(*DeleteUserResponse)(nil),          // 23: gh.protos.v1.DeleteUserResponse
+	(*ApproversForAccountResponse)(nil), // 24: gh.protos.v1.ApproversForAccountResponse
+	(*ValidateApproverResponse)(nil),    // 25: gh.protos.v1.ValidateApproverResponse
+	(*DepartmentUsersResponse)(nil),     // 26: gh.protos.v1.DepartmentUsersResponse
 }
 var file_api_auth_v1_user_service_proto_depIdxs = []int32{
 	0,  // 0: gh.protos.v1.UserService.AccountUsers:input_type -> gh.protos.v1.AccountUsersRequest
@@ -87,21 +90,23 @@ var file_api_auth_v1_user_service_proto_depIdxs = []int32{
 	10, // 10: gh.protos.v1.UserService.DeleteUser:input_type -> gh.protos.v1.DeleteUserRequest
 	11, // 11: gh.protos.v1.UserService.ApproversForAccount:input_type -> gh.protos.v1.ApproversForAccountRequest
 	11, // 12: gh.protos.v1.UserService.ValidateApprover:input_type -> gh.protos.v1.ApproversForAccountRequest
-	12, // 13: gh.protos.v1.UserService.AccountUsers:output_type -> gh.protos.v1.AccountUsersResponse
-	13, // 14: gh.protos.v1.UserService.ActivateUserEmail:output_type -> gh.protos.v1.ActivateUserEmailResponse
-	14, // 15: gh.protos.v1.UserService.ActivateUserPhone:output_type -> gh.protos.v1.ActivateUserPhoneResponse
-	15, // 16: gh.protos.v1.UserService.ChangePassword:output_type -> gh.protos.v1.ChangePasswordResponse
-	16, // 17: gh.protos.v1.UserService.RegisterUser:output_type -> gh.protos.v1.RegisterUserResponse
-	17, // 18: gh.protos.v1.UserService.SendEmailCode:output_type -> gh.protos.v1.SendEmailCodeResponse
-	18, // 19: gh.protos.v1.UserService.SendPhoneCode:output_type -> gh.protos.v1.SendPhoneCodeResponse
-	19, // 20: gh.protos.v1.UserService.UpdateUser:output_type -> gh.protos.v1.UpdateUserResponse
-	20, // 21: gh.protos.v1.UserService.UserByID:output_type -> gh.protos.v1.UserByIDResponse
-	21, // 22: gh.protos.v1.UserService.UserByUsername:output_type -> gh.protos.v1.UserByUsernameResponse
-	22, // 23: gh.protos.v1.UserService.DeleteUser:output_type -> gh.protos.v1.DeleteUserResponse
-	23, // 24: gh.protos.v1.UserService.ApproversForAccount:output_type -> gh.protos.v1.ApproversForAccountResponse
-	24, // 25: gh.protos.v1.UserService.ValidateApprover:output_type -> gh.protos.v1.ValidateApproverResponse
-	13, // [13:26] is the sub-list for method output_type
-	0,  // [0:13] is the sub-list for method input_type
+	12, // 13: gh.protos.v1.UserService.DepartmentUsers:input_type -> gh.protos.v1.DepartmentUsersRequest
+	13, // 14: gh.protos.v1.UserService.AccountUsers:output_type -> gh.protos.v1.AccountUsersResponse
+	14, // 15: gh.protos.v1.UserService.ActivateUserEmail:output_type -> gh.protos.v1.ActivateUserEmailResponse
+	15, // 16: gh.protos.v1.UserService.ActivateUserPhone:output_type -> gh.protos.v1.ActivateUserPhoneResponse
+	16, // 17: gh.protos.v1.UserService.ChangePassword:output_type -> gh.protos.v1.ChangePasswordResponse
+	17, // 18: gh.protos.v1.UserService.RegisterUser:output_type -> gh.protos.v1.RegisterUserResponse
+	18, // 19: gh.protos.v1.UserService.SendEmailCode:output_type -> gh.protos.v1.SendEmailCodeResponse
+	19, // 20: gh.protos.v1.UserService.SendPhoneCode:output_type -> gh.protos.v1.SendPhoneCodeResponse
+	20, // 21: gh.protos.v1.UserService.UpdateUser:output_type -> gh.protos.v1.UpdateUserResponse
+	21, // 22: gh.protos.v1.UserService.UserByID:output_type -> gh.protos.v1.UserByIDResponse
+	22, // 23: gh.protos.v1.UserService.UserByUsername:output_type -> gh.protos.v1.UserByUsernameResponse
+	23, // 24: gh.protos.v1.UserService.DeleteUser:output_type -> gh.protos.v1.DeleteUserResponse
+	24, // 25: gh.protos.v1.UserService.ApproversForAccount:output_type -> gh.protos.v1.ApproversForAccountResponse
+	25, // 26: gh.protos.v1.UserService.ValidateApprover:output_type -> gh.protos.v1.ValidateApproverResponse
+	26, // 27: gh.protos.v1.UserService.DepartmentUsers:output_type -> gh.protos.v1.DepartmentUsersResponse
+	14, // [14:28] is the sub-list for method output_type
+	0,  // [0:14] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

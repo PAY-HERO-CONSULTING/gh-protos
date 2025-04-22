@@ -104,4 +104,12 @@ service UserService {
       body : "*"
     };
   }
+
+  //  Department Users getting department users
+  rpc  DepartmentUsers(DepartmentUsersRequest) returns (DepartmentUsersResponse) {
+    option (google.api.http) = {
+      get : "/api/v1/departments/{department_id}/users"
+    };
+    option (google.api.method_signature) = "department_id";
+  }
 }
